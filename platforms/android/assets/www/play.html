@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+    <head>
+        <!--
+        Customize this policy to fit your own app's needs. For more guidance, see:
+            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+        Some notes:
+            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+        -->
+                <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
+
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+        <script type="text/javascript">
+            document.addEventListener("deviceready", onDeviceReady, false);
+function onDeviceReady() {
+    console.log(Media);
+}
+        </script>
+        <script type="text/javascript" src="js/fastclick.js"></script>
+        <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+                             <!--<script type="text/javascript" src="js/jquery.touchSwipe.min.js"></script>-->
+                             <script type="text/javascript">
+                                 $(function() {
+    FastClick.attach(document.body);
+});
+
+            function moveUp(){
+    myGamePiece.speedY=-4;
+}
+
+function moveLeft(){
+    myGamePiece.speedX=-4;
+}
+
+function moveRight(){
+    myGamePiece.speedX=4;
+}
+
+function moveDown(){
+    myGamePiece.speedY=4;
+}
+
+function stop(){
+    myGamePiece.speedX=0;
+    myGamePiece.speedY=0;
+}
+                             </script>
+        <title>Hello World</title>
+    </head>
+    <body onload="startGame()" onclick="hitRocket(event)">
+
+
+                     <script type="text/javascript">
+                        /* $("#a").live('click', function(e) {
+                            e.preventDefault()
+                            return false
+                        })
+                         $("#b").live('click', function(e) {
+                            e.preventDefault()
+                            return false
+                        })
+                         $("#c").live('click', function(e) {
+                            e.preventDefault()
+                            return false
+                        })
+                         $("#d").live('click', function(e) {
+                            e.preventDefault()
+                            return false
+                        })*/
+
+                        /*$("#a").off('click');
+                        $("#b").off('click');
+                        $("#c").off('click');
+                        $("#d").off('click');
+                        $("#swipe").off('click');*/
+                     </script>
+   	
+
+
+
+                    <div id="swipe" ontouchmove="place_in_gap()"></div>
+    
+    <!--<button ontouchstart="moveUp()" onmousedown="moveUp()" onmouseup="stop()" ontouchend="stop()" id="a" class="up"></button>-->
+    <button ontouchstart="moveUp()" ontouchend="stop()" ontouchmove="stop()" id="a" class="up"></button>
+
+    <!--<button ontouchstart="moveLeft()" onmousedown="moveLeft()" onmouseup="stop()" ontouchend="stop()" id="b" class="left"></button>-->
+    <button ontouchstart="moveLeft()" ontouchend="stop()" ontouchmove="stop()" id="b" class="left"></button>
+    	
+    <!--<button ontouchstart="moveRight()" onmousedown="moveRight()" onmouseup="stop()" ontouchend="stop()" id="c" class="right"></button>-->
+    <button ontouchstart="moveRight()" ontouchend="stop()" ontouchmove="stop()" id="c" class="right"></button>
+
+    <!--<button ontouchstart="moveDown()" onmousedown="moveDown()" onmouseup="stop()" ontouchend="stop()" id="d" class="down"></button>-->
+    <button ontouchstart="moveDown()" ontouchend="stop()" ontouchmove="stop()" id="d" class="down"></button> 
+
+ <script type="text/javascript" src="cordova.js"></script>
+                     <script type="text/javascript" src="js/index.js"></script>
+
+
+ <div id="p"></div>
+    </body>
+</html>

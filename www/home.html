@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>game</title>
+	<link rel="stylesheet" type="text/css" href="css/home.css">
+	<script type="text/javascript">
+		function play() 
+		{
+    		window.location.assign("play.html")
+		}
+		function exit()
+		{			
+			navigator.app.exitApp();        
+		}
+		function instruct()
+		{    
+			window.location.assign("instruct.html")
+		}
+
+	</script>
+</head>
+<body>
+
+	<div class="container">
+
+		<ul>
+			<button class="button" id="one" onclick="play()">
+			<li>
+				PLAY
+			</li></button>
+
+			<button class="button" id="two" onclick="instruct()">
+			<li>
+				INSTRUCTIONS
+			</li></button>
+
+			<button class="button" id="three">
+			<li>
+				RECORDS
+			</li></button>
+
+			<button class="button" id="four" onclick="exit()">
+			<li>
+				EXIT
+			</li></button>
+
+			
+
+		</ul>
+	
+	</div>
+
+
+</body>
+</html>
